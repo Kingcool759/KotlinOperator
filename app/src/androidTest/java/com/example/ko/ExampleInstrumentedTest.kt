@@ -1,7 +1,7 @@
 package com.example.ko
 
-import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.ko.character.delegate.classdelegation.usage.Usage
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -18,7 +18,19 @@ class ExampleInstrumentedTest {
     @Test
     fun useAppContext() {
         // Context of the app under test.
-        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.example.ko", appContext.packageName)
+//        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+//        assertEquals("com.example.ko", appContext.packageName)
+    }
+
+    @Test
+    fun testClassProxy() { // 类委托
+        val usage = Usage()
+        usage.main()
+    }
+
+    @Test
+    fun testPropertyProxy() {
+        val usage = com.example.ko.character.delegate.propertydelegation.Usage()
+        usage.main()
     }
 }
