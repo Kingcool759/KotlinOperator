@@ -2,6 +2,7 @@ package com.example.ko
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.ko.character.delegate.classdelegation.usage.Usage
+import com.example.ko.design.statemachine.LauncherStarter
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -32,5 +33,17 @@ class ExampleInstrumentedTest {
     fun testPropertyProxy() {
         val usage = com.example.ko.character.delegate.propertydelegation.Usage()
         usage.main()
+    }
+
+    @Test
+    fun testStateMachine() {
+        // Start the state machine
+        LauncherStarter.start()
+
+        // Send messages to transition between states
+        LauncherStarter.stateMachine?.sendMessage(LauncherStarter.MSG_GO_TO_B)
+        LauncherStarter.stateMachine?.sendMessage(LauncherStarter.MSG_GO_TO_C)
+        LauncherStarter.stateMachine?.sendMessage(LauncherStarter.MSG_GO_TO_A)
+        LauncherStarter.stateMachine?.sendMessage(LauncherStarter.MSG_GO_TO_B)
     }
 }
