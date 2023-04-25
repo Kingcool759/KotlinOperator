@@ -10,6 +10,7 @@ import coil.load
 import coil.request.ErrorResult
 import coil.request.ImageRequest
 import coil.request.SuccessResult
+import com.example.ko.activity.QueueActivity
 import com.example.ko.activity.SingleActivity
 
 class MainActivity : AppCompatActivity() {
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
     fun testOkDownload() {
         findViewById<Button>(R.id.go_single).setOnClickListener {
-            startActivity(Intent(this, SingleActivity::class.java))
+            startActivity(Intent(this, QueueActivity::class.java))
         }
     }
 }
