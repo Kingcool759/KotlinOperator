@@ -45,7 +45,10 @@ dependencies {
     // 反射
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.4.21")
 
-    //Coroutines
+    // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1")
+
+    // coil
+    implementation("io.coil-kt:coil:2.3.0")
 }
