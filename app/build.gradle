@@ -51,4 +51,13 @@ dependencies {
 
     // coil
     implementation("io.coil-kt:coil:2.3.0")
+
+    // okDownload
+    def okdownload_version = "1.0.7"
+    implementation "com.liulishuo.okdownload:okdownload:$okdownload_version"
+    implementation "com.liulishuo.okdownload:sqlite:$okdownload_version"  // 存储断点信息的数据库
+    implementation "com.liulishuo.okdownload:okhttp:$okdownload_version" // 提供okhttp连接，如果使用的话，需要引入okhttp网络请求库
+
+    // 工具类聚合
+    implementation 'com.blankj:utilcodex:1.30.6'
 }

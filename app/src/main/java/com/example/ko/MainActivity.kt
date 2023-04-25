@@ -1,13 +1,16 @@
 package com.example.ko
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import coil.Coil
 import coil.load
 import coil.request.ErrorResult
 import coil.request.ImageRequest
 import coil.request.SuccessResult
+import com.example.ko.activity.SingleActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         testCoil()
+        testOkDownload()
     }
 
     fun testCoil() {
@@ -39,5 +43,11 @@ class MainActivity : AppCompatActivity() {
             .target(ivTest)
             .build()
         Coil.imageLoader(this).enqueue(request)
+    }
+
+    fun testOkDownload() {
+        findViewById<Button>(R.id.go_single).setOnClickListener {
+            startActivity(Intent(this, SingleActivity::class.java))
+        }
     }
 }

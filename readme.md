@@ -28,6 +28,16 @@ thirdparty 第三方库
    观察者模式：在 ImageLoader、MemoryCache 等模块中，使用了观察者模式。比如 MemoryCache 中设计了一个清除过期内存的机制，并通过观察者的方式通知监听器。
    综上所述，Coil 库中应用了多种设计模式，每种模式都有其独特的特点，使得开发过程更加简单和灵活。
  - OkDownload 下载库
+   OkDownload是一个开源的、泛用性的下载库，通过不同的类和接口来支持多种用例。
+   以下是OkDownload运用的设计模式及其应用：
+   Builder模式：OkDownload中的DownloadRequest请求对象是通过Builder模式创建的，相比传统的构造函数而言，Builder模式使得代码可读性更好，避免了参数过多而导致的代码难以维护。
+   装饰器模式：OkDownload中提供了CallbackDispatcher类，对IEventListener接口进行了装饰，使得IEventListener更易用且功能更加完善。
+   观察者模式：OkDownload中的回调接口均实现了观察者模式，通过注册监听器实现下载状态的监听。
+   状态模式：在OkDownload中的DownloadListener中，定义了多个下载状态的回调方法，使用了状态模式来管理下载状态的变化。
+   策略模式：在OkDownload中的Connection、OutputStream、Filename、OkDownload的线程数量等方面均使用了策略模式，以便能够针对不同的场景采取不同的策略，从而保证OkDownload在不同情形下的良好表现。
+   单例模式：OkDownload的DownloadTask类使用了单例模式，确保仅有一个DownloadTask实例在运行，从而简化并发度控制的实现，提升并发能力。
+   工厂模式：OkDownload中的DownloadStrategyFactory类、DownloadTaskFactory类等，均是工厂模式的实现，用于创建Request、DownloadTask等对象。
+   综上所述，通过使用多种设计模式，OkDownload实现了高可扩展性、可维护性和高可读性的下载功能。
  - ...
 design 设计模式-全面
  - state machine-状态机
