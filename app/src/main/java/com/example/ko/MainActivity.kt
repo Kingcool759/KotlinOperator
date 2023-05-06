@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
             override fun onSuccess(request: ImageRequest, result: SuccessResult) {
                 super.onSuccess(request, result)
                 logD(Tag, "onSuccess#")
+
             }
 
         }
