@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         Coil.imageLoader(this).enqueue(request)
     }
 
-    fun testOkDownload() {
+    private fun testOkDownload() {
         findViewById<Button>(R.id.go_single).setOnClickListener {
             startActivity(Intent(this, QueueActivity::class.java))
         }
