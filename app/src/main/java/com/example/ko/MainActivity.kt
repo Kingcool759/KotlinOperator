@@ -50,5 +50,6 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.go_single).setOnClickListener {
             startActivity(Intent(this, QueueActivity::class.java))
         }
+
     }
 }
